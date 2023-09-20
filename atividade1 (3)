@@ -1,0 +1,51 @@
+class Motor:
+    def ligar(self):
+        print("Motor ligado.")
+
+    def desligar(self):
+        print("Motor desligado.")
+
+class Carro:
+    def __init__(self):
+        self.motor = Motor()
+
+    def ligar_carro(self):
+        print("Ligando o carro.")
+        self.motor.ligar()
+
+    def desligar_carro(self):
+        print("Desligando o carro.")
+        self.motor.desligar()
+
+meu_carro = Carro()
+meu_carro.ligar_carro()
+meu_carro.desligar_carro()
+
+class ItemMenu:
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+
+class Pedido:
+    def __init__(self):
+        self.itens = []
+
+    def adicionar_item(self, item):
+        self.itens.append(item)
+
+    def calcular_total(self):
+        total = sum(item.preco for item in self.itens)
+        return total
+
+item1 = ItemMenu("Hambúrguer", 10.99)
+item2 = ItemMenu("Batata Frita", 3.99)
+
+pedido = Pedido()
+pedido.adicionar_item(item1)
+pedido.adicionar_item(item2)
+
+print("Itens no pedido:")
+for item in pedido.itens:
+    print(item.nome)
+
+print("Total do pedido:", pedido.calcular_total())
