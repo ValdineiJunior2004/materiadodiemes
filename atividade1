@@ -1,0 +1,6 @@
+
+def greet():
+    print("Eai rapaziada beleza")
+
+greet()
+
