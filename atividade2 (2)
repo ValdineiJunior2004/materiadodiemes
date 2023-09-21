@@ -1,0 +1,35 @@
+class Documento:
+    def __init__(self, titulo, conteudo):
+        self.titulo = titulo
+        self.conteudo = conteudo
+    
+    def exibir(self):
+        return f"Título: {self.titulo}, Conteúdo: {self.conteudo}"
+
+class Email(Documento):
+    def __init__(self, titulo, conteudo, remetente, destinatario):
+        super().__init__(titulo, conteudo)
+        self.remetente = remetente
+        self.destinatario = destinatario
+    
+    def exibir(self):
+        base_info = super().exibir()
+        return f"{base_info}, Remetente: {self.remetente}, Destinatário: {self.destinatario}"
+
+class Relatorio(Documento):
+    def __init__(self, titulo, conteudo, data):
+        super().__init__(titulo, conteudo)
+        self.data = data
+    
+    def exibir(self):
+        base_info = super().exibir()
+        return f"{base_info}, Data: {self.data}"
+
+
+doc = Documento("Documento Genérico", "Conteúdo genérico.")
+email = Email("Assunto do Email", "Corpo do email.", "remetente@example.com", "destinatario@example.com")
+relatorio = Relatorio("Relatório Mensal", "Este é o relatório mensal.", "01/08/2023")
+
+print(doc.exibir())
+print(email.exibir())
+print(relatorio.exibir())
