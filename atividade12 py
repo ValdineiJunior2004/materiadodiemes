@@ -1,0 +1,26 @@
+(
+python -m venv venv
+
+venv\Scripts\activate
+
+source venv/bin/activate
+  
+
+  pip install numpy
+
+
+import numpy as np
+
+matriz = np.array([[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9]])
+
+for linha in matriz:
+    for elemento in linha:
+        print(elemento, end=' ')
+    print()
+
+git init
+git add matriz.py
+git commit -m "Adicionar script matriz.py"
+)
